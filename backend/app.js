@@ -12,7 +12,10 @@ const projectRoutes = require("./routes/projectRoutes");
 
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://frontend-drj4.onrender.com",
+  credentials: true
+}));
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
