@@ -1,7 +1,7 @@
 {
-  "name": "taskmanager",
+  "name": "mern-task-manager",
   "version": "1.0.0",
-  "description": "A MERN application for tasks management",
+  "description": "A MERN application for basic tasks management",
   "main": "index.js",
   "scripts": {
     "dev-server": "npm run dev --prefix backend",
@@ -13,8 +13,8 @@
     "start": "cd backend && node app.js"
   },
   "keywords": ["MERN", "Tasks","Task manager", "Full stack application"],
-  "author": "Tony",
-  "license": "ICC",
+  "author": "Aayush",
+  "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.1.0"
   }
