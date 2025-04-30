@@ -1,12 +1,12 @@
-// frontend/src/index.js or index.jsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "../App";
+import axios from "axios";
 
+const api = axios.create({
+  baseURL: process.env.REACT_APP_API_URL || "http://localhost:5000",
+  headers: {
+    "Content-Type": "application/json"
+  }
+});
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// Other utility functions (optional)...
+
+export default api;
