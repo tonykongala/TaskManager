@@ -14,11 +14,11 @@ const projectRoutes = require("./routes/projectRoutes");
 app.use(express.json());
 app.use(cors());
 
-const mongoUrl = process.env.MONGODB_URL;
-mongoose.connect(mongoUrl, err => {
-  if (err) throw err;
-  console.log("Mongodb connected...");
-});
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}, () => console.log("MongoDB connected"));
+
 
 app.use("/api/comments", commentRoutes);
 app.use("/api/projects", projectRoutes);
