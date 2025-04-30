@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: task-manager-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node app.js
+    envVars:
+      - key: MONGODB_URI
+        value: <your MongoDB Atlas URI>
+      - key: ACCESS_TOKEN_SECRET
+        value: <your JWT secret>
