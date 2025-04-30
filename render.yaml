@@ -13,11 +13,11 @@ services:
       - key: ACCESS_TOKEN_SECRET
         value: Rj2S?RVe9[]8-dCS6A**&b5Tsg$gwbg~Bd{*QTK
 
-  - type: static
+  - type: web
     name: mern-frontend
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: build
     envVars:
       - key: REACT_APP_API_URL
-        value: https://mern-backend.onrender.com/api  # Replace with your backend Render URL
+        value: https://backend-zpc2.onrender.com  # Replace with your backend Render URL
