@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: mern-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node app.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        value: mongodb+srv://tonylamington:NJsLnwIomtVZg2ke@cluster0.yh69ks0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - key: ACCESS_TOKEN_SECRET
+        value: Rj2S?RVe9[]8-dCS6A**&b5Tsg$gwbg~Bd{*QTK
+
+  - type: static
+    name: mern-frontend
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://mern-backend.onrender.com/api  # Replace with your backend Render URL
