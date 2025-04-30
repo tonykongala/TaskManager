@@ -1,27 +1,21 @@
 {
-  "name": "mern-task-manager-backend",
+  "name": "taskmanager",
   "version": "1.0.0",
-  "main": "app.js",
+  "description": "A MERN application for tasks management",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "start": "node app.js"
+    "dev-server": "npm run dev --prefix backend",
+    "dev-client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run dev-server\" \"npm run dev-client\"",
+    "install-all": "npm install && npm install --prefix frontend && npm install --prefix backend",
+    "heroku-postbuild": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend",
+    "build": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend",
+    "start": "cd backend && node app.js"
   },
-  "keywords": [
-    "Task manager",
-    "Tasks"
-  ],
-  "author": "Aayush",
-  "license": "ISC",
-  "description": "The backend part of simple task manager with user authentication",
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.3"
-  },
+  "keywords": ["MERN", "Tasks","Task manager", "Full stack application"],
+  "author": "Tony",
+  "license": "ICC",
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "concurrently": "^7.1.0"
   }
 }
